@@ -24,10 +24,17 @@ class _UsernameState extends State<Username> {
           hintText: "cuber",
           hintStyle: TextStyle(color: Theme.of(context).colorScheme.primary),
           enabledBorder: UnderlineInputBorder(borderSide: BorderSide.none),
-          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Theme.of(context).colorScheme.primary)),
+          focusedBorder: UnderlineInputBorder(
+            borderSide: BorderSide(
+              color: Theme.of(context).colorScheme.primary,
+            ),
+          ),
         ),
-        style: DefaultTextStyle.of(context).style.copyWith(color: Theme.of(context).colorScheme.primary),
-        onChanged: (newInput) => context.read<UsernameProvider>().setUsername(newInput),
+        style: DefaultTextStyle.of(
+          context,
+        ).style.copyWith(color: Theme.of(context).colorScheme.primary),
+        onChanged: (newInput) =>
+            context.read<UsernameProvider>().setUsername(newInput),
         onTapOutside: (event) => FocusScope.of(context).unfocus(),
       ),
     );

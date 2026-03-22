@@ -32,7 +32,9 @@ class AlgorithmsProvider extends ChangeNotifier {
   /// Gets all algorithms where id contains a specific String.
   /// Returns null if there are no matching algorithms.
   List<Algorithm>? getAlgorithmsWhereIdContains(String idContains) {
-    final results = _algorithms.values.where((value) => value.id.contains(idContains)).toList();
+    final results = _algorithms.values
+        .where((value) => value.id.contains(idContains))
+        .toList();
     if (results.isNotEmpty) {
       return results;
     } else {
@@ -43,7 +45,9 @@ class AlgorithmsProvider extends ChangeNotifier {
   /// Returns all algorithms where isPinned == true.
   /// Returns null if there are none.
   List<Algorithm>? getPinnedAlgorithms() {
-    final results = _algorithms.values.where((value) => value.isPinned).toList();
+    final results = _algorithms.values
+        .where((value) => value.isPinned)
+        .toList();
     if (results.isNotEmpty) {
       return results;
     } else {

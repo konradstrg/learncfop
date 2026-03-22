@@ -20,7 +20,10 @@ class HiveAlgorithmRepository implements AlgorithmRepository {
     assert(_box.isOpen, "Start Hive first with algorithmProvider.startup()");
     assert(_box.isNotEmpty, "Put algorithms in repository first");
 
-    return _box.toMap().map((key, value) => MapEntry(key, Algorithm.fromJson(Map<String, dynamic>.from(value))));
+    return _box.toMap().map(
+      (key, value) =>
+          MapEntry(key, Algorithm.fromJson(Map<String, dynamic>.from(value))),
+    );
   }
 
   @override

@@ -7,7 +7,11 @@ class PLLCaseIcon extends StatelessWidget {
   final List<String> caseConfiguration;
   final List<List> arrows;
 
-  const PLLCaseIcon({required this.caseConfiguration, required this.arrows, super.key});
+  const PLLCaseIcon({
+    required this.caseConfiguration,
+    required this.arrows,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -171,7 +175,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "1",
                       targetId: targetId1,
                       doubleSided: isDoubleSided1,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -181,7 +188,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "2",
                       targetId: targetId2,
                       doubleSided: isDoubleSided2,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -191,7 +201,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "3",
                       targetId: targetId3,
                       doubleSided: isDoubleSided3,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -226,7 +239,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "4",
                       targetId: targetId4,
                       doubleSided: isDoubleSided4,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -236,7 +252,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "5",
                       targetId: targetId5,
                       doubleSided: isDoubleSided5,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -246,7 +265,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "6",
                       targetId: targetId6,
                       doubleSided: isDoubleSided6,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -281,7 +303,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "7",
                       targetId: targetId7,
                       doubleSided: isDoubleSided7,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -291,7 +316,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "8",
                       targetId: targetId8,
                       doubleSided: isDoubleSided8,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,
@@ -301,7 +329,10 @@ class PLLCaseIcon extends StatelessWidget {
                       id: "9",
                       targetId: targetId9,
                       doubleSided: isDoubleSided9,
-                      child: Expanded(flex: 9, child: Container(color: Colors.yellow)),
+                      child: Expanded(
+                        flex: 9,
+                        child: Container(color: Colors.yellow),
+                      ),
                     ),
                     Expanded(
                       flex: lineThickness,

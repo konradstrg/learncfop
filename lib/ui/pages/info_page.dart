@@ -23,25 +23,40 @@ class InfoPage extends StatelessWidget {
               const SizedBox(height: 32, width: double.infinity),
               const Text("made by kstrenge"),
               const SizedBox(height: 32),
-              const Text("This app is open source.\nHelp it get better:", textAlign: TextAlign.center),
+              const Text(
+                "This app is open source.\nHelp it get better:",
+                textAlign: TextAlign.center,
+              ),
               const SizedBox(height: 8),
               TextButton.icon(
                 label: const Text("Link to GitHub"),
                 icon: const FaIcon(FontAwesomeIcons.github),
-                style: coloredTextButtonStyle(Theme.of(context).colorScheme.onSurface),
-                onPressed: () async => await launchUrl(Uri.parse("https://github.com/kstrenge/learncfop")),
+                style: coloredTextButtonStyle(
+                  Theme.of(context).colorScheme.onSurface,
+                ),
+                onPressed: () async => await launchUrl(
+                  Uri.parse("https://github.com/kstrenge/learncfop"),
+                ),
               ),
               TextButton.icon(
                 label: const Text("Report bug / error"),
-                icon: const FaIcon(Icons.bug_report),
-                style: coloredTextButtonStyle(Theme.of(context).colorScheme.error),
-                onPressed: () async => await launchUrl(Uri.parse("https://github.com/kstrenge/learncfop/issues")),
+                icon: Icon(Icons.bug_report),
+                style: coloredTextButtonStyle(
+                  Theme.of(context).colorScheme.error,
+                ),
+                onPressed: () async => await launchUrl(
+                  Uri.parse("https://github.com/kstrenge/learncfop/issues"),
+                ),
               ),
               TextButton.icon(
                 label: const Text("Suggest feature"),
-                icon: const FaIcon(Icons.lightbulb),
-                style: coloredTextButtonStyle(Theme.of(context).colorScheme.primary),
-                onPressed: () async => await launchUrl(Uri.parse("https://github.com/kstrenge/learncfop/issues")),
+                icon: const Icon(Icons.lightbulb),
+                style: coloredTextButtonStyle(
+                  Theme.of(context).colorScheme.primary,
+                ),
+                onPressed: () async => await launchUrl(
+                  Uri.parse("https://github.com/kstrenge/learncfop/issues"),
+                ),
               ),
               Spacer(),
               Text("Version 2.1"),
@@ -49,15 +64,25 @@ class InfoPage extends StatelessWidget {
               TextButton.icon(
                 label: const Text("Privacy Policy"),
                 icon: const Icon(Icons.description),
-                style: coloredTextButtonStyle(Theme.of(context).colorScheme.tertiary),
-                onPressed: () async => await launchUrl(Uri.parse("https://konstr.de/learncfop/privacy")),
+                style: coloredTextButtonStyle(
+                  Theme.of(context).colorScheme.tertiary,
+                ),
+                onPressed: () async => await launchUrl(
+                  Uri.parse("https://konstr.de/learncfop/privacy"),
+                ),
               ),
               TextButton.icon(
                 label: const Text("Open Source Licences"),
                 icon: const Icon(Icons.description),
-                style: coloredTextButtonStyle(Theme.of(context).colorScheme.tertiary),
+                style: coloredTextButtonStyle(
+                  Theme.of(context).colorScheme.tertiary,
+                ),
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LicensePage()));
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const LicensePage(),
+                    ),
+                  );
                 },
               ),
             ],

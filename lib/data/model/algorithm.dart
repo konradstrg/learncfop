@@ -9,9 +9,14 @@ abstract class Algorithm {
   String? notes;
   bool _isPinned;
 
-  Algorithm({required String id, required this.label, required this.algorithm, this.notes, required bool isPinned})
-    : _id = id,
-      _isPinned = isPinned;
+  Algorithm({
+    required String id,
+    required this.label,
+    required this.algorithm,
+    this.notes,
+    required bool isPinned,
+  }) : _id = id,
+       _isPinned = isPinned;
 
   String get id => _id;
   bool get isPinned => _isPinned;
@@ -23,7 +28,9 @@ abstract class Algorithm {
     } else if (json["id"].contains("pll")) {
       return PLLAlgorithm.fromJson(json);
     } else {
-      throw UnimplementedError("Not a valid JSON for creating an algorithm object");
+      throw UnimplementedError(
+        "Not a valid JSON for creating an algorithm object",
+      );
     }
   }
 
@@ -55,13 +62,18 @@ class OLLAlgorithm extends Algorithm {
     algorithm: json["algorithm"] as String,
     notes: json["notes"] as String?,
     isPinned: json["isPinned"] as bool,
-    caseConfiguration: (json["caseConfiguration"] as List<dynamic>).map((e) => e as int).toList(),
+    caseConfiguration: (json["caseConfiguration"] as List<dynamic>)
+        .map((e) => e as int)
+        .toList(),
   );
 
   List<int> get caseConfiguration => _caseConfiguration;
 
   @override
-  Map<String, dynamic> toJson() => {...super.toJson(), "caseConfiguration": _caseConfiguration};
+  Map<String, dynamic> toJson() => {
+    ...super.toJson(),
+    "caseConfiguration": _caseConfiguration,
+  };
 }
 
 class PLLAlgorithm extends Algorithm {
@@ -86,13 +98,21 @@ class PLLAlgorithm extends Algorithm {
     algorithm: json["algorithm"] as String,
     notes: json["notes"] as String?,
     isPinned: json["isPinned"] as bool,
-    caseConfiguration: (json["caseConfiguration"] as List<dynamic>).map((e) => e as String).toList(),
-    arrows: (json["arrows"] as List<dynamic>).map((e) => e as List<dynamic>).toList(),
+    caseConfiguration: (json["caseConfiguration"] as List<dynamic>)
+        .map((e) => e as String)
+        .toList(),
+    arrows: (json["arrows"] as List<dynamic>)
+        .map((e) => e as List<dynamic>)
+        .toList(),
   );
 
   List<String> get caseConfiguration => _caseConfiguration;
   List<List> get arrows => _arrows;
 
   @override
-  Map<String, dynamic> toJson() => {...super.toJson(), "caseConfiguration": _caseConfiguration, "arrows": _arrows};
+  Map<String, dynamic> toJson() => {
+    ...super.toJson(),
+    "caseConfiguration": _caseConfiguration,
+    "arrows": _arrows,
+  };
 }

@@ -18,9 +18,11 @@ class AlgorithmCard extends StatelessWidget {
       margin: EdgeInsets.zero,
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onLongPress: () => Navigator.of(
-          context,
-        ).push(MaterialPageRoute(builder: (context) => EditAlgorithmPage(algorithm: algorithm))),
+        onLongPress: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => EditAlgorithmPage(algorithm: algorithm),
+          ),
+        ),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 16, 4, 16),
           child: Row(
@@ -28,9 +30,13 @@ class AlgorithmCard extends StatelessWidget {
               SizedBox(
                 height: 80,
                 child: algorithm is OLLAlgorithm
-                    ? OLLCaseIcon(caseConfiguration: (algorithm as OLLAlgorithm).caseConfiguration)
+                    ? OLLCaseIcon(
+                        caseConfiguration:
+                            (algorithm as OLLAlgorithm).caseConfiguration,
+                      )
                     : PLLCaseIcon(
-                        caseConfiguration: (algorithm as PLLAlgorithm).caseConfiguration,
+                        caseConfiguration:
+                            (algorithm as PLLAlgorithm).caseConfiguration,
                         arrows: (algorithm as PLLAlgorithm).arrows,
                       ),
               ),
@@ -42,21 +48,33 @@ class AlgorithmCard extends StatelessWidget {
                     Row(
                       children: [
                         Expanded(
-                          child: Text(algorithm.label, style: TextStyle(fontWeight: FontWeight.w700)),
+                          child: Text(
+                            algorithm.label,
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
                         ),
                       ],
                     ),
                     SizedBox(height: 2),
-                    Text(algorithm.algorithm, style: Theme.of(context).textTheme.titleLarge),
+                    Text(
+                      algorithm.algorithm,
+                      style: Theme.of(context).textTheme.titleLarge,
+                    ),
                     SizedBox(height: 2),
-                    algorithm.notes != null ? Text(algorithm.notes!) : const SizedBox(),
+                    algorithm.notes != null
+                        ? Text(algorithm.notes!)
+                        : const SizedBox(),
                   ],
                 ),
               ),
               IconButton(
-                onPressed: () => context.read<AlgorithmsProvider>().togglePinned(algorithm),
+                onPressed: () =>
+                    context.read<AlgorithmsProvider>().togglePinned(algorithm),
                 icon: algorithm.isPinned
-                    ? Icon(Icons.push_pin, color: Theme.of(context).colorScheme.primary)
+                    ? Icon(
+                        Icons.push_pin,
+                        color: Theme.of(context).colorScheme.primary,
+                      )
                     : Icon(Icons.push_pin_outlined),
               ),
             ],

@@ -12,14 +12,17 @@ class OLLPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Algorithm>? algorithms = context.watch<AlgorithmsProvider>().getAlgorithmsWhereIdContains("oll");
+    final List<Algorithm>? algorithms = context
+        .watch<AlgorithmsProvider>()
+        .getAlgorithmsWhereIdContains("oll");
 
     return AlgorithmPage(
       title: "Instant Orientation of Last Layer",
       algorithmSliverList: algorithms != null && algorithms.isNotEmpty
           ? SliverList.separated(
               itemCount: algorithms.length,
-              itemBuilder: (context, index) => AlgorithmCard(algorithm: algorithms[index]),
+              itemBuilder: (context, index) =>
+                  AlgorithmCard(algorithm: algorithms[index]),
               separatorBuilder: (context, index) => SizedBox(height: 16),
             )
           : SliverList(delegate: SliverChildListDelegate([ErrorMessage()])),

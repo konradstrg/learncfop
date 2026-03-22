@@ -31,7 +31,9 @@ ThemeData lightTheme(BuildContext context) {
   return ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
-    colorScheme: ColorScheme.fromSeed(seedColor: context.watch<ThemeColorProvider>().themeColor),
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: context.watch<ThemeColorProvider>().themeColor,
+    ),
     fontFamily: "Orbitron",
   );
 }

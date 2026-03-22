@@ -12,7 +12,9 @@ class OLL2LookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Algorithm>? algorithms = context.watch<AlgorithmsProvider>().getAlgorithmsWhereIdContains("oll2look");
+    final List<Algorithm>? algorithms = context
+        .watch<AlgorithmsProvider>()
+        .getAlgorithmsWhereIdContains("oll2look");
 
     return AlgorithmPage(
       title: "Orientation of Last Layer in 2 steps",
