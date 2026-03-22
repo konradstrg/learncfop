@@ -11,9 +11,15 @@ class ErrorMessage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Icon(Icons.cancel_outlined, color: Theme.of(context).colorScheme.error),
+            Icon(
+              Icons.cancel_outlined,
+              color: Theme.of(context).colorScheme.error,
+            ),
             SizedBox(height: 8),
-            Text("Error while loading algorithms.\nReset algorithms in settings.", textAlign: TextAlign.center),
+            Text(
+              "Error while loading algorithms.\nReset algorithms in settings.",
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),

@@ -14,7 +14,7 @@ class ThemeColorProvider extends ChangeNotifier {
   }
 
   /// Saves the selected theme color to storage and updates UI.
-  setThemeColor(Color newThemeColor) {
+  void setThemeColor(Color newThemeColor) {
     themeColor = newThemeColor;
     notifyListeners();
     Preferences.saveThemeColor(newThemeColor);

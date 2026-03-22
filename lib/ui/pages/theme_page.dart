@@ -20,7 +20,9 @@ class ThemePage extends StatelessWidget {
           crossAxisSpacing: 8,
         ),
         itemBuilder: (context, index) {
-          final isActive = context.watch<ThemeColorProvider>().themeColor.toARGB32() == themeColors[index].toARGB32();
+          final isActive =
+              context.watch<ThemeColorProvider>().themeColor.toARGB32() ==
+              themeColors[index].toARGB32();
           return ClipRRect(
             borderRadius: BorderRadius.circular(isActive ? 16 : 128),
             child: Material(
@@ -28,8 +30,15 @@ class ThemePage extends StatelessWidget {
               child: InkWell(
                 borderRadius: BorderRadius.circular(16),
                 splashColor: getRippleColorFromBackground(themeColors[index]),
-                onTap: () => context.read<ThemeColorProvider>().setThemeColor(themeColors[index]),
-                child: isActive ? Icon(Icons.check, color: Theme.of(context).colorScheme.surface) : null,
+                onTap: () => context.read<ThemeColorProvider>().setThemeColor(
+                  themeColors[index],
+                ),
+                child: isActive
+                    ? Icon(
+                        Icons.check,
+                        color: Theme.of(context).colorScheme.surface,
+                      )
+                    : null,
               ),
             ),
           );

@@ -19,7 +19,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    final List<Algorithm>? pinned = context.watch<AlgorithmsProvider>().getPinnedAlgorithms();
+    final List<Algorithm>? pinned = context
+        .watch<AlgorithmsProvider>()
+        .getPinnedAlgorithms();
 
     return Scaffold(
       body: CustomScrollView(
@@ -29,11 +31,17 @@ class _HomePageState extends State<HomePage> {
             title: Row(children: [Text("Welcome, "), Username()]),
             actions: [
               IconButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const ThemePage())),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ThemePage()),
+                ),
                 icon: const Icon(Icons.color_lens_outlined),
               ),
               IconButton(
-                onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const InfoPage())),
+                onPressed: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const InfoPage()),
+                ),
                 icon: const Icon(Icons.info_outlined),
               ),
             ],
@@ -43,7 +51,8 @@ class _HomePageState extends State<HomePage> {
             sliver: pinned != null && pinned.isNotEmpty
                 ? SliverList.separated(
                     itemCount: pinned.length,
-                    itemBuilder: (context, index) => AlgorithmCard(algorithm: pinned[index]),
+                    itemBuilder: (context, index) =>
+                        AlgorithmCard(algorithm: pinned[index]),
                     separatorBuilder: (context, index) => SizedBox(height: 16),
                   )
                 : SliverFillRemaining(
@@ -59,7 +68,10 @@ class _HomePageState extends State<HomePage> {
                             textAlign: TextAlign.center,
                           ),
                           SizedBox(height: 8),
-                          Icon(Icons.push_pin_outlined, color: Theme.of(context).colorScheme.primary),
+                          Icon(
+                            Icons.push_pin_outlined,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           SizedBox(height: 64),
                         ],
                       ),

@@ -78,16 +78,39 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
       theme: lightTheme(context),
       darkTheme: darkTheme(context),
       home: Scaffold(
-        body: [HomePage(), OLL2LookPage(), OLLPage(), PLL2LookPage(), PLLPage()][currentPageIndex],
+        body: [
+          HomePage(),
+          OLL2LookPage(),
+          OLLPage(),
+          PLL2LookPage(),
+          PLLPage(),
+        ][currentPageIndex],
         bottomNavigationBar: NavigationBar(
-          onDestinationSelected: (int index) => setState(() => currentPageIndex = index),
+          onDestinationSelected: (int index) =>
+              setState(() => currentPageIndex = index),
           selectedIndex: currentPageIndex,
           destinations: const [
-            NavigationDestination(icon: Icon(Icons.home_outlined), selectedIcon: Icon(Icons.home), label: "Home"),
-            NavigationDestination(icon: Icon(Icons.keyboard_double_arrow_up), label: "OLL2Look"),
-            NavigationDestination(icon: Icon(Icons.keyboard_arrow_up), label: "OLL"),
-            NavigationDestination(icon: Icon(Icons.sync, size: 22), label: "PLL2Look"),
-            NavigationDestination(icon: Icon(Icons.replay, size: 22), label: "PLL"),
+            NavigationDestination(
+              icon: Icon(Icons.home_outlined),
+              selectedIcon: Icon(Icons.home),
+              label: "Home",
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.keyboard_double_arrow_up),
+              label: "OLL2Look",
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.keyboard_arrow_up),
+              label: "OLL",
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.sync, size: 22),
+              label: "PLL2Look",
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.replay, size: 22),
+              label: "PLL",
+            ),
           ],
         ),
       ),

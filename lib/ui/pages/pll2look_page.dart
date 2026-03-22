@@ -12,7 +12,9 @@ class PLL2LookPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final List<Algorithm>? algorithms = context.watch<AlgorithmsProvider>().getAlgorithmsWhereIdContains("pll2look");
+    final List<Algorithm>? algorithms = context
+        .watch<AlgorithmsProvider>()
+        .getAlgorithmsWhereIdContains("pll2look");
 
     return AlgorithmPage(
       title: "Permutation of Last Layer in 2 steps",

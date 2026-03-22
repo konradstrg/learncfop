@@ -23,7 +23,9 @@ class EditAlgorithmPage extends StatelessWidget {
                   padding: const EdgeInsets.fromLTRB(64, 0, 64, 16),
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(color: Theme.of(context).colorScheme.onSurface),
+                      border: Border.all(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
                       borderRadius: BorderRadius.circular(24),
                     ),
                     child: Padding(
@@ -32,9 +34,13 @@ class EditAlgorithmPage extends StatelessWidget {
                         height: 128,
                         width: 128,
                         child: algorithm is OLLAlgorithm
-                            ? OLLCaseIcon(caseConfiguration: (algorithm as OLLAlgorithm).caseConfiguration)
+                            ? OLLCaseIcon(
+                                caseConfiguration: (algorithm as OLLAlgorithm)
+                                    .caseConfiguration,
+                              )
                             : PLLCaseIcon(
-                                caseConfiguration: (algorithm as PLLAlgorithm).caseConfiguration,
+                                caseConfiguration: (algorithm as PLLAlgorithm)
+                                    .caseConfiguration,
                                 arrows: (algorithm as PLLAlgorithm).arrows,
                               ),
                       ),
@@ -49,9 +55,15 @@ class EditAlgorithmPage extends StatelessWidget {
                     label: Text("Rotate View"),
                     icon: Icon(Icons.rotate_left),
                     style: ButtonStyle(
-                      backgroundColor: WidgetStatePropertyAll(Theme.of(context).colorScheme.surface),
-                      padding: WidgetStatePropertyAll(EdgeInsets.symmetric(horizontal: 12)),
-                      foregroundColor: WidgetStatePropertyAll(Theme.of(context).colorScheme.onSurface),
+                      backgroundColor: WidgetStatePropertyAll(
+                        Theme.of(context).colorScheme.surface,
+                      ),
+                      padding: WidgetStatePropertyAll(
+                        EdgeInsets.symmetric(horizontal: 12),
+                      ),
+                      foregroundColor: WidgetStatePropertyAll(
+                        Theme.of(context).colorScheme.onSurface,
+                      ),
                     ),
                     onPressed: () {},
                   ),
@@ -62,7 +74,9 @@ class EditAlgorithmPage extends StatelessWidget {
           SizedBox(height: 32),
           Theme(
             data: Theme.of(context).copyWith(
-              inputDecorationTheme: InputDecorationTheme(border: OutlineInputBorder()),
+              inputDecorationTheme: InputDecorationTheme(
+                border: OutlineInputBorder(),
+              ),
               materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
             ),
             child: Form(
@@ -70,12 +84,18 @@ class EditAlgorithmPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TextFormField(
-                    decoration: InputDecoration(label: Text("Label"), icon: Icon(Icons.label_outlined)),
+                    decoration: InputDecoration(
+                      label: Text("Label"),
+                      icon: Icon(Icons.label_outlined),
+                    ),
                     initialValue: algorithm.label,
                   ),
                   SizedBox(height: 16),
                   TextFormField(
-                    decoration: InputDecoration(label: Text("Algorithm"), icon: Icon(Icons.change_circle_outlined)),
+                    decoration: InputDecoration(
+                      label: Text("Algorithm"),
+                      icon: Icon(Icons.change_circle_outlined),
+                    ),
                     maxLines: 5,
                     minLines: 1,
                     initialValue: algorithm.algorithm,
@@ -106,7 +126,10 @@ class EditAlgorithmPage extends StatelessWidget {
                   ),
                   SizedBox(height: 16),
                   TextFormField(
-                    decoration: InputDecoration(label: Text("Notes"), icon: Icon(Icons.notes_outlined)),
+                    decoration: InputDecoration(
+                      label: Text("Notes"),
+                      icon: Icon(Icons.notes_outlined),
+                    ),
                     maxLines: 5,
                     minLines: 1,
                     initialValue: algorithm.notes,

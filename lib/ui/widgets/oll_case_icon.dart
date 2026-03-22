@@ -9,7 +9,10 @@ class OLLCaseIcon extends StatelessWidget {
     const int lineThickness = 2;
 
     // generate grey/yellow color list:
-    List<Color> colors = List.generate(22, (_) => const Color.fromRGBO(100, 100, 100, 1));
+    List<Color> colors = List.generate(
+      22,
+      (_) => const Color.fromRGBO(100, 100, 100, 1),
+    );
     for (int index in caseConfiguration) {
       colors[index] = Colors.yellow;
     }

@@ -12,7 +12,7 @@ class UsernameProvider extends ChangeNotifier {
   }
 
   /// Saves the selected theme color to storage and updates UI.
-  setUsername(String newUsername) {
+  void setUsername(String newUsername) {
     username = newUsername;
     notifyListeners();
     Preferences.saveUsername(newUsername);
