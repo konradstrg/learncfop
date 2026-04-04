@@ -86,14 +86,18 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
+    - family: Galindo
+      fonts:
+        - asset: assets/fonts/Galindo-Regular.ttf
+          weight: 400
     - family: Orbitron
       fonts:
         - asset: assets/fonts/Orbitron-Regular.ttf
           weight: 400
-        - asset: assets/fonts/Orbitron-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Orbitron-Black.ttf
-          weight: 900
+    - family: Fraunces
+      fonts:
+        - asset: assets/fonts/Fraunces-Variable.ttf
+          weight: 400
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf

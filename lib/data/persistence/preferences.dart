@@ -47,4 +47,19 @@ class Preferences {
     assert(_preferences != null, "call init() first");
     await _preferences!.setInt("themeColor", color.toARGB32());
   }
+
+  /// Loads the chosen font from storage.
+  static Future<String?> loadFont() async {
+    assert(_preferences != null, "call init() first");
+    if (_preferences!.getString("font") != null) {
+      return _preferences!.getString("font")!;
+    }
+    return null;
+  }
+
+  /// Saves the chosen font to storage.
+  static Future<void> saveFont(String font) async {
+    assert(_preferences != null, "call init() first");
+    await _preferences!.setString("font", font);
+  }
 }
