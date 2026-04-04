@@ -45,16 +45,7 @@ class AlgorithmCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            algorithm.label,
-                            style: TextStyle(fontWeight: FontWeight.w700),
-                          ),
-                        ),
-                      ],
-                    ),
+                    Row(children: [Expanded(child: Text(algorithm.label))]),
                     SizedBox(height: 2),
                     Text(
                       algorithm.algorithm,
