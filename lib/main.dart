@@ -5,8 +5,9 @@ import 'package:provider/provider.dart';
 import 'data/persistence/hive_algorithm_repository.dart';
 import 'data/persistence/preferences.dart';
 import 'data/state/algorithms_provider.dart';
-import 'data/state/theme_color_provider.dart';
 import 'data/state/username_provider.dart';
+import 'data/state/theme_color_provider.dart';
+import 'data/state/font_provider.dart';
 import 'logic/initialize_algorithms.dart';
 import 'ui/pages/home_page.dart';
 import 'ui/pages/oll_page.dart';
@@ -42,18 +43,21 @@ void main() async {
   // Create providers:
   final algorithmProvider = AlgorithmsProvider(algorithmRepository);
   await algorithmProvider.loadAlgorithms();
-  final themeColorProvider = ThemeColorProvider();
-  await themeColorProvider.loadThemeColor();
   final usernameProvider = UsernameProvider();
   await usernameProvider.loadUsername();
+  final themeColorProvider = ThemeColorProvider();
+  await themeColorProvider.loadThemeColor();
+  final fontProvider = FontProvider();
+  await fontProvider.loadFont();
 
   runApp(
     MultiProvider(
       // Apply providers:
       providers: [
         ChangeNotifierProvider(create: (context) => algorithmProvider),
-        ChangeNotifierProvider(create: (context) => themeColorProvider),
         ChangeNotifierProvider(create: (context) => usernameProvider),
+        ChangeNotifierProvider(create: (context) => themeColorProvider),
+        ChangeNotifierProvider(create: (context) => fontProvider),
       ],
       // Start app:
       child: const LearnCFOPApp(),

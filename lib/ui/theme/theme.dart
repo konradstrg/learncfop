@@ -3,6 +3,7 @@ import "package:flutter/services.dart";
 import "package:provider/provider.dart";
 
 import "../../data/state/theme_color_provider.dart";
+import "../../data/state/font_provider.dart";
 
 /// List of colors that the user can select as a theme color.
 List<Color> themeColors = [
@@ -34,7 +35,9 @@ ThemeData lightTheme(BuildContext context) {
     colorScheme: ColorScheme.fromSeed(
       seedColor: context.watch<ThemeColorProvider>().themeColor,
     ),
-    fontFamily: "Orbitron",
+    fontFamily: context.watch<FontProvider>().font == "Standard"
+        ? null
+        : context.watch<FontProvider>().font,
   );
 }
 
@@ -46,7 +49,9 @@ ThemeData darkTheme(BuildContext context) {
       seedColor: context.watch<ThemeColorProvider>().themeColor,
       brightness: Brightness.dark,
     ),
-    fontFamily: "Orbitron",
+    fontFamily: context.watch<FontProvider>().font == "Standard"
+        ? null
+        : context.watch<FontProvider>().font,
   );
 }
 
