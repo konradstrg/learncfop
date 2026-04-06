@@ -23,11 +23,11 @@ class OLL2LookPage extends StatelessWidget {
               itemCount: algorithms.length + 2,
               itemBuilder: (context, index) {
                 if (index == 0) {
-                  return Text("Step 1 - Corners:");
+                  return Text("Step 1 - Edges:");
                 } else if (index > 0 && index < 4) {
                   return AlgorithmCard(algorithm: algorithms[index - 1]);
                 } else if (index == 4) {
-                  return const Text("Step 2 - Edges:");
+                  return const Text("Step 2 - Corners:");
                 } else {
                   return AlgorithmCard(algorithm: algorithms[index - 2]);
                 }
