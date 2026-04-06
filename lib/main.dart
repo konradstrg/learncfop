@@ -101,7 +101,7 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
             ),
             NavigationDestination(
               icon: Icon(Icons.keyboard_double_arrow_up),
-              label: "OLL2Look",
+              label: "OLL 2Look",
             ),
             NavigationDestination(
               icon: Icon(Icons.keyboard_arrow_up),
@@ -109,7 +109,7 @@ class _LearnCFOPAppState extends State<LearnCFOPApp> {
             ),
             NavigationDestination(
               icon: Icon(Icons.sync, size: 22),
-              label: "PLL2Look",
+              label: "PLL 2Look",
             ),
             NavigationDestination(
               icon: Icon(Icons.replay, size: 22),
